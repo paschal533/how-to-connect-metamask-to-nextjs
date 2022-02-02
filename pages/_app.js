@@ -1,7 +1,19 @@
+import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const supportedChainIds = [4, 137];
+
+const connectors = {
+  injected: {},
 }
 
-export default MyApp
+export default function App({ Component, pageProps }) {
+  return (
+    <ThirdwebWeb3Provider
+      connectors={connectors}
+      supportedChainIds={supportedChainIds}
+    >
+      <Component {...pageProps} />
+    </ThirdwebWeb3Provider>
+  );
+}
