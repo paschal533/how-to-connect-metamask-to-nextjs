@@ -1,6 +1,7 @@
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import '../styles/globals.css'
 
+// 4 Rinkeby
 const supportedChainIds = [4, 137];
 
 const connectors = {
